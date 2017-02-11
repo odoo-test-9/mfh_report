@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_wizard_report" model="ir.ui.view">
+            <field name="name">wizard_report</field>
+            <field name="model">wizard.report</field>
+            <field name="arch" type="xml">
+                <form string="Choose your date">
+                    <p class="oe_gray" >
+                        Choose the date for which you want to get the information.
+                    </p>
+                    <p class="oe_gray">
+                        Show the information operations in the select range.
+                    </p>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                    <footer>
+                        <button name="print_report" string="Print" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_report" model="ir.actions.act_window">
+            <field name="name">Mfh report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+          <!-- Menu -->
+      <menuitem action="action_report" id="menu_action_account_mfh_reporte_01" parent="account.account_account_menu"/>
+        
+<!--
+        <menuitem 
+                id="custom_reports" 
+                name="MFH Reports" 
+                parent="base.menu_reporting" 
+                sequence="13"  
+                groups="base.group_user"/>
+                
+        <menuitem 
+                id="menu_action_daily_report" 
+                action="action_report" 
+                parent="custom_reports" 
+                sequence="1"/>
+-->
+
+    </data>
+</openerp>

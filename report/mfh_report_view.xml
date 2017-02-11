@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_mfh_document">
+    <t t-call="report.external_layout">
+        <div class="page">
+            
+            <table style="width:100%;">
+                <thead>
+                   <tr>
+                        <th class="text-center" style="width:100%;">
+                            <h2><span>HELLO REPORT </span></h2>
+                            <p t-field="o.date_from"/>
+                        </th>
+                   </tr>
+                 </thead>
+            </table> 
+
+        </div>
+    </t>
+</template>
+
+<!--
+<template id="report_mfh">
+    <t t-call="report.html_container">
+        <t t-foreach="doc_ids" t-as="doc_id">
+            <t t-raw="translate_doc(doc_id, doc_model, 'company_id.partner_id.lang', 'mfh_report.report_mfh_document')"/>
+        </t>
+    </t>
+</template>
+-->
+
+<template id="report_mfh">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="mfh_report.report_mfh_document" t-lang="o.company_id.partner_id.lang"/>
+        </t>
+    </t>
+</template>
+
+
+</data>
+</openerp>

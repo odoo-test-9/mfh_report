@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report 
+            id="report_mfh_01"
+            string="Report 01"
+            model="wizard.report" 
+            report_type="qweb-pdf"
+            file="mfh_report.report_mfh"
+            name="mfh_report.report_mfh"
+            attachment_use="True"
+            menu="False"
+            />
+    </data>
+</openerp>
