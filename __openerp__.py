@@ -33,6 +33,7 @@
             'report.xml',
             'wizard/wizard_report_view.xml',
             'report/mfh_report_view.xml',
+            'report/report_mfh_sale.xml',
             ],
     'demo': [],
     'test': [],

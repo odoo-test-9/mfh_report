@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_mfh_document_sale">
+    <t t-call="report.external_layout">
+            <div class="page">            
+                  <span t-field="o.name"/>         
+             </div>
+    </t>
+</template>
+
+<template id="report_mfh_sale">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="mfh_report.report_mfh_document_sale" t-lang="o.partner_id.lang"/>
+        </t>
+    </t>
+</template>
+
+
+</data>
+</openerp>

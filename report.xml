@@ -11,5 +11,15 @@
             attachment_use="True"
             menu="False"
             />
+            
+         <report 
+            id="report_mfh_02"
+            string="Report 02"
+            model="sale.order" 
+            report_type="qweb-pdf"
+            file="mfh_report.report_mfh_sale"
+            name="mfh_report.report_mfh_sale"
+            attachment_use="True"
+            />
     </data>
 </openerp>
