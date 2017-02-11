@@ -3,8 +3,7 @@
 <data>
 <template id="report_mfh_document">
     <t t-call="report.external_layout">
-        <div class="page">
-            
+        <div class="page">            
             <table style="width:100%;">
                 <thead>
                    <tr>
@@ -13,8 +12,7 @@
                             <p t-field="o.date_from"/>
                             <!-- hacemos un ciclo -->
                        
-                     <tr t-foreach="move" t-as="m">
-						 
+                     <tr t-foreach="move" t-as="m">						 
                         <td class="text-left">
                             <span t-field="m.account_id.name"/>
                         </td>
@@ -22,12 +20,27 @@
                         <td class="text-right">
                             <span t-field="m.date"/>
                         </td>
-                    </tr>                   
+                        
+                        
+                        <td class="text-right">
+                            <span t-field="m.debit"/>
+                        </td> 
+                                         
+                        <t t-set="total" t-value="m.debit" />
+                        
+                    </tr> 
+                                                         
+                                        
                             
                         </th>
                    </tr>
                  </thead>
             </table> 
+            
+            <div>
+              <!--  <strong> El total: <t t-esc="total" /> </strong> -->
+              <strong>  El total: <t t-esc="suma" /> </strong>
+            </div>
 
         </div>
     </t>

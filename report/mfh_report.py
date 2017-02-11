@@ -60,6 +60,11 @@ class MfhReport(osv.AbstractModel):
                                                       ('date', '<=', data['form']['date_to']),
                                                       ('account_id', 'in', lis_accounts)])
         print accounts
+                
+        suma = 0
+        for mv in moves:
+			suma += mv.debit
+            
         
         docargs = {
             'doc_ids': self.env.context.get('active_ids', []),
@@ -68,6 +73,7 @@ class MfhReport(osv.AbstractModel):
             'docs': docs,
             'time': time,
             'move': moves,
+            'suma' : suma,
         }
 
         return self.env['report'].render('mfh_report.report_mfh', docargs)
