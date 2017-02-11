@@ -11,6 +11,19 @@
                         <th class="text-center" style="width:100%;">
                             <h2><span>HELLO REPORT </span></h2>
                             <p t-field="o.date_from"/>
+                            <!-- hacemos un ciclo -->
+                       
+                     <tr t-foreach="move" t-as="m">
+						 
+                        <td class="text-left">
+                            <span t-field="m.account_id.name"/>
+                        </td>
+
+                        <td class="text-right">
+                            <span t-field="m.date"/>
+                        </td>
+                    </tr>                   
+                            
                         </th>
                    </tr>
                  </thead>

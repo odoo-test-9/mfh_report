@@ -67,6 +67,7 @@ class MfhReport(osv.AbstractModel):
             'data': data['form'],
             'docs': docs,
             'time': time,
+            'move': moves,
         }
 
         return self.env['report'].render('mfh_report.report_mfh', docargs)
