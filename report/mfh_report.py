@@ -73,7 +73,7 @@ class MfhReport(osv.AbstractModel):
             'docs': docs,
             'time': time,
             'move': moves,
-            'suma' : suma,
+            'msuma' : suma,
         }
 
         return self.env['report'].render('mfh_report.report_mfh', docargs)

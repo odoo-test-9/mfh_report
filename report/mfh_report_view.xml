@@ -28,9 +28,8 @@
                                          
                         <t t-set="total" t-value="m.debit" />
                         
-                    </tr> 
-                                                         
-                                        
+                    </tr>                                                     
+                                      
                             
                         </th>
                    </tr>
@@ -39,7 +38,8 @@
             
             <div>
               <!--  <strong> El total: <t t-esc="total" /> </strong> -->
-              <strong>  El total: <t t-esc="suma" /> </strong>
+              <strong>  El total: <t t-esc="msuma"/> </strong>
+              
             </div>
 
         </div>
